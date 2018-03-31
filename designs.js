@@ -15,6 +15,7 @@ $("input[type='submit']").on("click",function(event) {
   const height = $("#inputHeight").val();
   const width = $("#inputWeight").val();
 
+  $("#pixelCanvas").empty();
   makeGrid(height,width);
 });
 
@@ -36,7 +37,7 @@ function makeGrid(height,width) {
     for (let j = 0; j<width; j++) {
 
       // add a td to row
-      $("tr").append($("<td></td>"));
+      $("tr").last().append($("<td></td>"));
     } 
   }
 
