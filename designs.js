@@ -8,7 +8,7 @@
 // console.log($("#inputWeight").val());
 
 // Submit button
-$("input[type='submit'").on("click",function(event) {
+$("input[type='submit']").on("click",function(event) {
   
   event.preventDefault();
 
