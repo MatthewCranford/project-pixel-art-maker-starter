@@ -24,21 +24,22 @@ $("input[type='submit']").on("click",function(event) {
 
 function makeGrid(height,width) {
 
-  // Your code goes here!
 
-
-  // for number up to height
   for (let i = 0; i<height; i++) {
     
     // create a row
     $("#pixelCanvas").append($("<tr></tr>"));
 
-    // for number up to width
     for (let j = 0; j<width; j++) {
 
       // add a td to row
       $("tr").last().append($("<td></td>"));
+
     } 
   }
 
 }
+
+$("td").on("click", function() {
+  console.log("HEYY!");
+})
