@@ -1,12 +1,4 @@
 
-
-// Select color input
-// console.log($("#colorPicker").val());
-
-// Select size input
-// console.log($("#inputHeight").val());
-// console.log($("#inputWeight").val());
-
 // Submit button
 $("input[type='submit']").on("click",function(event) {
   
@@ -21,9 +13,7 @@ $("input[type='submit']").on("click",function(event) {
 
 
 // When size is submitted by the user, call makeGrid()
-
 function makeGrid(height,width) {
-
 
   for (let i = 0; i<height; i++) {
     
@@ -34,12 +24,17 @@ function makeGrid(height,width) {
 
       // add a td to row
       $("tr").last().append($("<td></td>"));
-
     } 
   }
-
 }
 
-$("td").on("click", function() {
-  console.log("HEYY!");
-})
+// color square when clicked
+$("#pixelCanvas").on("click", "td", function() {
+
+  // change background color of event target's 
+  $(this).css("background-color", $("#colorPicker").val());
+});
+
+
+
+
