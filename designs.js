@@ -28,11 +28,27 @@ function makeGrid(height,width) {
   }
 }
 
+let down = false;
+$("#pixelCanvas").on("mousedown", "td", function() {
+  down = true;
+  console.log ("value of down is=", down);
+});
+$("#pixelCanvas").on("mouseup", "td", function() {
+  down = false;
+  console.log ("value of down is=", down);
+});
+
+
+
+
 // color square when clicked
 $("#pixelCanvas").on("click", "td", function() {
 
-  // change background color of event target's 
-  $(this).css("background-color", $("#colorPicker").val());
+  if (down) {
+
+    // change background color of event target's 
+    $(this).css("background-color", $("#colorPicker").val());
+  }
 });
 
 
