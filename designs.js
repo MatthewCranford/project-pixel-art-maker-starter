@@ -32,11 +32,10 @@ function makeGrid(height,width) {
 
 
 // color square when clicked
-$("#pixelCanvas").on("mouseover", "td", function(e) {
-  console.log("HEY!");
+$("#pixelCanvas").on("mousedown mouseover", "td", function(e) {
+
   if (e.buttons === 1) {
 
-    console.log("Listen!");
     // change background color of event target's 
     $(this).css("background-color", $("#colorPicker").val());
   }
