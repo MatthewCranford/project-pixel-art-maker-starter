@@ -1,4 +1,8 @@
 
+// global variable
+let draw = true;
+
+
 // Submit button
 $("input[type='submit']").on("click",function(event) {
   
@@ -36,11 +40,26 @@ $("#pixelCanvas").on("mousedown mouseover", "td", function(e) {
 
   if (e.buttons === 1) {
 
-    // change background color of event target's 
-    $(this).css("background-color", $("#colorPicker").val());
+		if (draw === true) { // global var check
+			$(this).css("background-color", $("#colorPicker").val());
+		}
+		else {
+			$(this).css("background-color", "");
+		}
   }
 });
 
+
+// toggle between draw/erase
+$("input[name='tool']").on("change", function() {
+	
+	if ($(this).val() === "draw") {
+		draw = true; // change global var
+	}
+	else if ($(this).val() === "erase") {
+		draw = false; // change global var
+	}
+});
 
 
 

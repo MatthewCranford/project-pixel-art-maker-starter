@@ -21,7 +21,17 @@
     <h2>Pick A Color</h2>
     <input type="color" id="colorPicker">
 
-    <h2>Design Canvas</h2>
+		<h2>Design Canvas</h2>
+		
+		<!-- draw/erase toggle -->
+		<form> 
+			<input id="draw-toggle" type="radio" name="tool" value="draw" checked>
+			<label for="draw-toggle">Draw</label>
+
+			<input id="erase-toggle" type="radio" name="tool" value="erase">
+			<label for="erase-toggle">Erase</label>
+		</form>
+
     <table id="pixelCanvas"></table>
 
     
